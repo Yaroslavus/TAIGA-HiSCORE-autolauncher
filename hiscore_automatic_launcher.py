@@ -70,7 +70,7 @@ def set_stop_time(hour, minute, second):
         stop_time_file.write("{}:{}:{}".format(hour, minute, second))
 
 open_mode = sys.argv[1]
-if sys.argv[2]:
+if len(sys.argv) == 3:
     try:
         hour, minute, second = sys.argv[2].split(":")
         set_stop_time(hour, minute, second)
