@@ -61,12 +61,12 @@ def set_stop_time(hour, minute, second):
     
     for ip_name in ('115', '116', '119'):
         os.system("ssh hiscore@192.168.1." + ip_name)
-        os.system("cd /home/hiscore/krs/NEW_PROGRAMS/hiscore_2018")
-        with open ("STOPRUN.CNF", "w+") as stop_time_file:
+#        os.system("cd /home/hiscore/krs/NEW_PROGRAMS/hiscore_2018")
+        with open ("hiscore@192.168.1." + ip_name + ":/home/hiscore/krs/NEW_PROGRAMS/hiscore_2018/STOPRUN.CNF", "w+") as stop_time_file:
             stop_time_file.write("{}:{}:{}".format(hour, minute, second))
     os.system("ssh hiscore@192.168.1.119")
-    os.system("cd /home/hiscore/krs/NEW_PROGRAMS/HiSCORE_4")
-    with open ("STOPRUN.CNF", "w+") as stop_time_file:
+#    os.system("cd /home/hiscore/krs/NEW_PROGRAMS/HiSCORE_4")
+    with open ("hiscore@192.168.1.119:/home/hiscore/krs/NEW_PROGRAMS/HiSCORE_4/STOPRUN.CNF", "w+") as stop_time_file:
         stop_time_file.write("{}:{}:{}".format(hour, minute, second))
 
 open_mode = sys.argv[1]
